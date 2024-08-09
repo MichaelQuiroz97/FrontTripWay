@@ -1,0 +1,58 @@
+h2 {
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #234ba0;
+}
+
+.container {
+    padding: 25px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.eliminar {
+    cursor: pointer;
+    color: #ee2800;
+}
+
+.edit {
+    cursor: pointer;
+    color: #1878b0;
+}
+
+.ver {
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    padding: 16px;
+}
+
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.hotel-foto {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}

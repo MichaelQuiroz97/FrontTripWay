@@ -1,0 +1,28 @@
+.ver-habitaciones-container {
+  padding: 20px;
+}
+
+.button-group {
+  margin-top: 10px;
+}
+
+.mat-form-field {
+  margin-right: 10px;
+}
+
+.estado-alquilado {
+  color: red;
+}
+
+.estado-libre {
+  color: #234ba0;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.table-container {
+  margin-top: 20px;
+}

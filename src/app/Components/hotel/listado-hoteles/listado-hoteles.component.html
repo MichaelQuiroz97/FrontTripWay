@@ -1,0 +1,77 @@
+<div class="title">
+  <h2>Listado de Hoteles</h2>
+</div>
+
+<div class="container">
+  <mat-form-field>
+    <mat-label>Filtrar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Hotel" #input>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <!-- Nombre Hotel Column -->
+      <ng-container matColumnDef="nombreHotel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Hotel </th>
+        <td mat-cell *matCellDef="let row"> {{row.nombreHotel}} </td>
+      </ng-container>
+
+      <!-- Dirección Hotel Column -->
+      <ng-container matColumnDef="direccionHotel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección Hotel </th>
+        <td mat-cell *matCellDef="let row"> {{row.direccionHotel}} </td>
+      </ng-container>
+
+      <!-- País Column -->
+      <ng-container matColumnDef="pais">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> País </th>
+        <td mat-cell *matCellDef="let row"> {{row.pais}} </td>
+      </ng-container>
+
+      <!-- Ciudad Column -->
+      <ng-container matColumnDef="ciudad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ciudad </th>
+        <td mat-cell *matCellDef="let row"> {{row.ciudad}} </td>
+      </ng-container>
+
+      <!-- Foto Column -->
+      <ng-container matColumnDef="ruta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Foto </th>
+        <td mat-cell *matCellDef="let row">
+          <img [src]="row.ruta" alt="{{row.nombreHotel}}" class="hotel-foto"/>
+        </td>
+      </ng-container>
+
+     <!-- Acciones Column -->
+<ng-container matColumnDef="acciones">
+  <th mat-header-cell *matHeaderCellDef> Acciones </th>
+  <td mat-cell *matCellDef="let row">
+    <button mat-icon-button color="primary" matTooltip="Ver" [routerLink]="['/verHotel', row.id]">
+      <mat-icon class="ver">search</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Eliminar" (click)="eliminarHotel(row.id)">
+      <mat-icon class="eliminar">delete</mat-icon>
+    </button>
+  </td>
+</ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="7">No hay datos que coincidan con el filtro "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Seleccione la página"></mat-paginator>
+  </div>
+</div>

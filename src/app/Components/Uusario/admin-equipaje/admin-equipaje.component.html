@@ -1,0 +1,175 @@
+<!-- 
+<div class="equipaje-admin">
+    <div class="search-section">
+      <mat-form-field>
+        <mat-label>Buscar Equipaje por ID</mat-label>
+        <input matInput #searchInput>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="buscarEquipaje(searchInput.value)">Buscar</button>
+    </div>
+  
+    <div *ngIf="equipajeSeleccionado" class="equipaje-info">
+      <h2>Información del Equipaje</h2>
+      <mat-card>
+        <mat-card-title>Factura</mat-card-title>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>ID</mat-label>
+            <input matInput [(ngModel)]="equipajeSeleccionado.id" readonly>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Cédula</mat-label>
+            <input matInput [(ngModel)]="equipajeSeleccionado.cedula" [readonly]="!editMode">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Peso</mat-label>
+            <input matInput type="number" [(ngModel)]="equipajeSeleccionado.peso" [readonly]="!editMode">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <mat-select [(ngModel)]="equipajeSeleccionado.tipo" [disabled]="!editMode">
+              <mat-option value="De Mano">De Mano</mat-option>
+              <mat-option value="Facturada">Facturada</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-radio-group [(ngModel)]="equipajeSeleccionado.estado" [disabled]="!editMode">
+            <mat-radio-button value="Recibida">Recibida</mat-radio-button>
+            <mat-radio-button value="Viajando">Viajando</mat-radio-button>
+            <mat-radio-button value="Entregada">Entregada</mat-radio-button>
+          </mat-radio-group>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="accent" *ngIf="!editMode" (click)="toggleEditMode()">
+            <mat-icon>edit</mat-icon> Editar
+          </button>
+          <button mat-button color="primary" *ngIf="editMode" (click)="editarEquipaje()">
+            <mat-icon>save</mat-icon> Guardar
+          </button>
+          <button mat-button color="warn" *ngIf="!editMode" (click)="eliminarEquipaje(equipajeSeleccionado.id)">
+            <mat-icon>delete</mat-icon> Eliminar
+          </button>
+          <button mat-button color="warn" *ngIf="editMode" (click)="cancelarEdicion()">
+            <mat-icon>cancel</mat-icon> Cancelar
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  
+    <div class="register-section">
+      <h2>Registrar Nuevo Equipaje</h2>
+      <mat-form-field>
+        <mat-label>Cédula</mat-label>
+        <input matInput [(ngModel)]="nuevaCedula">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="validarUsuario()">Validar Usuario</button>
+      <div *ngIf="usuarioValido">
+        <mat-form-field>
+          <mat-label>Número de Maletas</mat-label>
+          <input matInput type="number" [(ngModel)]="nuevoEquipaje.peso">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Tipo de Maleta</mat-label>
+          <mat-select [(ngModel)]="nuevoEquipaje.tipo">
+            <mat-option value="De Mano">De Mano</mat-option>
+            <mat-option value="Facturada">Facturada</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-radio-group [(ngModel)]="nuevoEquipaje.estado">
+          <mat-radio-button value="Recibida">Recibida</mat-radio-button>
+          <mat-radio-button value="Viajando">Viajando</mat-radio-button>
+          <mat-radio-button value="Entregada">Entregada</mat-radio-button>
+        </mat-radio-group>
+        <button mat-raised-button color="primary" (click)="registrarEquipaje()">Registrar</button>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+   <div class="equipaje-admin">
+    <div class="search-section">
+      <mat-form-field>
+        <mat-label>Buscar Equipaje por ID</mat-label>
+        <input matInput #searchInput type="number">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="buscarEquipaje(searchInput.valueAsNumber)">Buscar</button>
+    </div>
+  
+    <div *ngIf="equipajeSeleccionado" class="equipaje-info">
+      <h2>Información del Equipaje</h2>
+      <mat-card>
+        <mat-card-title>Factura</mat-card-title>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>ID</mat-label>
+            <input matInput [(ngModel)]="equipajeSeleccionado.id" readonly>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Cédula</mat-label>
+            <input matInput [(ngModel)]="equipajeSeleccionado.cedulaUsuario" [readonly]="!editMode">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Peso</mat-label>
+            <input matInput type="number" [(ngModel)]="equipajeSeleccionado.peso" [readonly]="!editMode">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <mat-select [(ngModel)]="equipajeSeleccionado.tipo" [disabled]="!editMode">
+              <mat-option value="De Mano">De Mano</mat-option>
+              <mat-option value="Facturada">Facturada</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-radio-group [(ngModel)]="equipajeSeleccionado.estado" [disabled]="!editMode">
+            <mat-radio-button value="Recibida">Recibida</mat-radio-button>
+            <mat-radio-button value="Viajando">Viajando</mat-radio-button>
+            <mat-radio-button value="Entregada">Entregada</mat-radio-button>
+          </mat-radio-group>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="accent" *ngIf="!editMode" (click)="toggleEditMode()">
+            <mat-icon>edit</mat-icon> Editar
+          </button>
+          <button mat-button color="primary" *ngIf="editMode" (click)="editarEquipaje()">
+            <mat-icon>save</mat-icon> Guardar
+          </button>
+          <button mat-button color="warn" *ngIf="!editMode" (click)="eliminarEquipaje(equipajeSeleccionado.id)">
+            <mat-icon>delete</mat-icon> Eliminar
+          </button>
+          <button mat-button color="warn" *ngIf="editMode" (click)="cancelarEdicion()">
+            <mat-icon>cancel</mat-icon> Cancelar
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  
+  
+    <div class="register-section">
+      <h2>Registrar Nuevo Equipaje</h2>
+      <mat-form-field>
+        <mat-label>Cédula</mat-label>
+        <input matInput [(ngModel)]="nuevaCedula">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="validarUsuario()">Validar Usuario</button>
+      <div *ngIf="usuarioValido">
+        <mat-form-field>
+          <mat-label>Peso</mat-label>
+          <input matInput type="number" [(ngModel)]="nuevoEquipaje.peso">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Tipo de Maleta</mat-label>
+          <mat-select [(ngModel)]="nuevoEquipaje.tipo">
+            <mat-option value="De Mano">De Mano</mat-option>
+            <mat-option value="Facturada">Facturada</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-radio-group [(ngModel)]="nuevoEquipaje.estado">
+          <mat-radio-button value="Recibida">Recibida</mat-radio-button>
+          <mat-radio-button value="Viajando">Viajando</mat-radio-button>
+          <mat-radio-button value="Entregada">Entregada</mat-radio-button>
+        </mat-radio-group>
+        <button mat-raised-button color="primary" (click)="registrarEquipaje()">Registrar</button>
+      </div>
+    </div>
+    
+  </div>
+  

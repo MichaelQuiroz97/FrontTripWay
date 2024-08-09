@@ -1,0 +1,122 @@
+<div class="hotel-container">
+  <div class="hotel-details">
+    <div class="nombreHotel">
+      <h2>{{ hotel?.nombreHotel }}</h2>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-photo">
+        <img [src]="hotel!.ruta" alt="Foto del hotel">
+      </div>
+      <div class="hotel-description">
+        <p><strong>Dirección: <br></strong> {{ hotel?.direccionHotel }}<br></p>
+        <p><strong>País:<br></strong> {{ hotel?.pais }}<br></p>
+        <p><strong>Ciudad:<br></strong> {{ hotel?.ciudad }}<br></p>
+      </div>
+    </div>
+    <div class="Botones" *ngIf="!editMode">
+      <button mat-raised-button color="primary" (click)="toggleEditMode()">Editar</button>
+      <button mat-raised-button color="accent" [routerLink]="['/verHabitaciones', hotelId]">Habitaciones</button>
+    </div>
+  </div>
+  <div class="edit-hotel" *ngIf="editMode">
+    <div class="form-group">
+      <label for="nombreHotel">Nombre del Hotel:</label>
+      <input matInput id="nombreHotel" [(ngModel)]="hotelActualizado!.nombreHotel" />
+    </div>
+    <div class="form-group">
+      <label for="direccionHotel">Dirección:</label>
+      <input matInput id="direccionHotel" [(ngModel)]="hotelActualizado!.direccionHotel" />
+    </div>
+    <div class="form-group">
+      <label for="pais">País:</label>
+      <mat-select id="pais" [(ngModel)]="hotelActualizado!.pais">
+        <mat-option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</mat-option>
+      </mat-select>
+    </div>
+    <div class="form-group">
+      <label for="ciudad">Ciudad:</label>
+      <input matInput id="ciudad" [(ngModel)]="hotelActualizado!.ciudad" />
+    </div>
+    <div class="form-group">
+      <label for="foto">URL de la Foto:</label>
+      <input matInput id="foto" [(ngModel)]="hotelActualizado!.ruta" />
+    </div>
+    <button mat-raised-button color="primary" (click)="guardarCambios()">Guardar</button>
+    <button mat-raised-button color="warn" (click)="toggleEditMode()">Cancelar</button>
+  </div>
+  <!-- <div class="image-fondo" *ngIf="!editMode">
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/004/297/740/non_2x/plane-way-icon-airplane-path-direction-and-destination-red-point-logo-design-template-holiday-trip-illustration-template-on-white-background-vector.jpg"
+      alt="Plane Path">
+  </div> -->
+
+
+  <!-- <div class="image-fondo" *ngIf="!editMode">
+    <svg viewBox="0 0 100 100" class="plane-svg">
+      <path id="heart-path" fill="transparent" stroke="black"
+            d="M 10,30 
+               A 20,20 0,0,1 50,30 
+               A 20,20 0,0,1 90,30 
+               Q 90,60 50,90 
+               Q 10,60 10,30 Z"/>
+      <image href="https://static.vecteezy.com/system/resources/previews/001/220/030/non_2x/airplane-png.png" height="10" width="10">
+        <animateMotion repeatCount="indefinite" dur="5s">
+          <mpath href="#heart-path" />
+        </animateMotion>
+      </image>
+    </svg>
+  </div> -->
+
+
+  <!-- <div class="image-fondo" *ngIf="!editMode">
+    <svg viewBox="0 0 200 200" class="plane-svg">
+   
+      <path id="heart-path" fill="transparent" stroke="black" stroke-dasharray="5,5"
+            d="M 50,60 
+               A 30,30 0,0,1 100,60 
+               A 30,30 0,0,1 150,60 
+               Q 150,100 100,150 
+               Q 50,100 50,60 Z"/>
+      
+     
+      <image href="https://upload.wikimedia.org/wikipedia/commons/6/6b/Airplane_silhouette.png" height="10" width="10" id="plane-icon">
+        <animateMotion repeatCount="indefinite" dur="15s">
+          <mpath href="#heart-path" />
+        </animateMotion>
+      </image>
+      
+
+      <image href="https://upload.wikimedia.org/wikipedia/commons/8/88/Map_marker.svg" height="8" width="8" x="145" y="75">
+      </image>
+    </svg>
+  </div> -->
+  
+
+  <div class="image-fondo" *ngIf="!editMode">
+    <svg viewBox="0 0 200 200" class="plane-svg">
+      <!-- Ruta en forma de corazón -->
+      <path id="heart-path" fill="transparent" stroke="black" stroke-dasharray="5,5"
+            d="M 50,60 
+               A 30,30 0,0,1 100,60 
+               A 30,30 0,0,1 150,60 
+               Q 150,100 100,150 
+               Q 50,100 50,60 Z"/>
+      
+      <!-- Icono del avión al inicio -->
+      <mat-icon id="plane-icon" svgIcon="airplane_ticket" class="plane-icon">
+        <animateMotion repeatCount="indefinite" dur="11s"> <!-- 1/4 más rápido -->
+          <mpath href="#heart-path" />
+        </animateMotion>
+      </mat-icon>
+      
+      <!-- Icono de ubicación al final -->
+      <mat-icon id="location-icon" svgIcon="location_on" x="145" y="75"></mat-icon>
+    </svg>
+  </div>
+
+
+
+
+  
+
+</div>

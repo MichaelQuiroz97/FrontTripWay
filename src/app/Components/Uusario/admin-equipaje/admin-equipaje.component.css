@@ -1,0 +1,50 @@
+.equipaje-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .search-section,
+  .register-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .equipaje-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  mat-card {
+    background-color: #8da6dc;
+    color: white;
+  }
+  
+  mat-card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  mat-card-content p {
+    margin: 5px 0;
+  }
+  
+  mat-card-content mat-form-field, 
+  mat-card-content mat-radio-group {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  

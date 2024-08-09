@@ -1,0 +1,20 @@
+
+<div>
+  <h1>Promociones de la Semana</h1>
+  <button mat-raised-button color="primary" (click)="openPromocionDialog()">Agregar Promoción</button>
+  <div *ngIf="isLoading">Cargando promociones...</div>
+  <div *ngIf="!isLoading" class="promociones-container">
+    <mat-card *ngFor="let promocion of listadoPromociones" class="promocion-card">
+      <div class="card-header">
+        <mat-card-title (click)="openPromocionDialog(promocion.id)">{{ promocion.titulo }}</mat-card-title>
+        <mat-icon class="delete-icon" (click)="deletePromocion(promocion.id)">delete</mat-icon>
+      </div>
+      <mat-card-content>
+        <p>{{ promocion.descripcion }}</p>
+        <p><strong>Destino:</strong> {{ promocion.destino }}</p>
+        <p><strong>Precio:</strong> {{ promocion.precio }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

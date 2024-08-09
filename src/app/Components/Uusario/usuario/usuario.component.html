@@ -1,0 +1,40 @@
+<!-- <div class="cedula-display">
+  Cédula: {{ usuarioForm.get('cedula')?.value }}
+</div>
+<div class="usuario-container">
+    <h2>Perfil de Usuario</h2>
+    <form [formGroup]="usuarioForm" class="usuario-form">
+      <div>
+        <label for="cedula">Cédula:</label>
+        <input id="cedula" formControlName="cedula" />
+      </div>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" formControlName="nombre" />
+      </div>
+      <div>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento" />
+      </div>
+      <div>
+        <label for="paisResidencia">País de Residencia:</label>
+        <select id="paisResidencia" formControlName="paisResidencia">
+          <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="correoElectronico">Correo Electrónico:</label>
+        <input id="correoElectronico" formControlName="correoElectronico" />
+      </div>
+      <div>
+        <label for="contrasenia">Contraseña:</label>
+        <input id="contrasenia" type="password" formControlName="contrasenia" />
+      </div>
+      <div class="buttons">
+        <button type="button" (click)="editar()" [disabled]="editMode">Editar</button>
+        <button type="button" (click)="guardar()" [disabled]="!editMode">Guardar</button>
+        <button type="button" (click)="eliminarCuenta()">Eliminar Cuenta</button>
+      </div>
+    </form>
+  </div>
+   -->

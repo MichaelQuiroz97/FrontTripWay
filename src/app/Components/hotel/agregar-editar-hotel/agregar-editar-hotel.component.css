@@ -1,0 +1,36 @@
+.hotel-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .hotel-info, .hotel-form, .hotel-image {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .hotel-form {
+    background-color: #234ba0;
+    color: white;
+  }
+  
+  .hotel-form mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hotel-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hotel-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  

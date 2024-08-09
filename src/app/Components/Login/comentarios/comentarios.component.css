@@ -1,0 +1,61 @@
+.comentarios-container {
+    padding: 16px;
+  }
+  
+  .usuario-nombre {
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #234ba0;
+  }
+  
+  .new-comment-form {
+    margin-bottom: 16px;
+  }
+  
+  .new-comment-form input {
+    width: calc(100% - 80px);
+    padding: 8px;
+    margin-right: 8px;
+  }
+  
+  .new-comment-form button {
+    padding: 8px 16px;
+    background-color: #234ba0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .new-comment-form button:hover {
+    background-color: #1b3b8a;
+  }
+  
+  .comentario {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .comentario-actions {
+    margin-top: 8px;
+  }
+  
+  .comentario-actions button {
+    margin-right: 8px;
+  }
+  
+  .comentario-actions .mat-icon-button {
+    color: #234ba0;
+  }
+  
+  .comentario-actions .mat-icon-button[mat-icon-button][color="warn"] {
+    color: red;
+  }
+  
+  .comentario input {
+    width: calc(100% - 80px);
+    padding: 8px;
+    margin-right: 8px;
+  }
+  

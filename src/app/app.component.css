@@ -1,0 +1,33 @@
+
+mat-toolbar {
+  background-color: #234ba0;
+  color: #e0f3d1;
+  }
+  
+  mat-toolbar button {
+  margin-right: 5px;
+  color: #e0f3d1;
+  text-transform: none;
+  }
+  
+  mat-toolbar button
+  {
+  transform: scale(1.25);
+  }
+  
+  mat-toolbar button {
+  transition: transform 0.2s ease-in-out;
+  }
+  
+  mat-icon {
+  color: #e0f3d1;
+  }
+  
+  .espaciador {
+  flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  }

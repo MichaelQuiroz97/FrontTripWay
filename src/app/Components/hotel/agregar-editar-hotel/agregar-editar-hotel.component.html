@@ -1,0 +1,32 @@
+<div class="hotel-details mat-elevation-z8" *ngIf="hotelActualizado">
+    <h2>{{ hotelActualizado.nombreHotel }}</h2>
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label>Nombre del Hotel</mat-label>
+      <input matInput [(ngModel)]="hotelActualizado!.nombreHotel" />
+    </mat-form-field>
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input matInput [(ngModel)]="hotelActualizado!.direccionHotel" />
+    </mat-form-field>
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label>País</mat-label>
+      <mat-select [(ngModel)]="hotelActualizado!.pais">
+        <mat-option *ngFor="let pais of paises" [value]="pais.nombre">
+          {{ pais.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label>Ciudad</mat-label>
+      <input matInput [(ngModel)]="hotelActualizado!.ciudad" />
+    </mat-form-field>
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label>URL de la Foto</mat-label>
+      <input matInput [(ngModel)]="hotelActualizado!.ruta" />
+    </mat-form-field>
+    <div class="button-group">
+      <button mat-raised-button color="primary" (click)="guardarCambios()">Guardar</button>
+      <button mat-button (click)="cancelar()">Cancelar</button>
+    </div>
+  </div>
+  

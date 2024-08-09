@@ -1,0 +1,60 @@
+.comentarios-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .usuario-nombre {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #234ba0;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .comentario {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .comentario p {
+    margin: 0;
+    color: #234ba0;
+  }
+  
+  .comentario small {
+    display: block;
+    margin-top: 5px;
+    color: #555;
+  }
+  
+  .comentario div {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .comentario button {
+    background-color: #234ba0;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .comentario button:hover {
+    background-color: #1d3e8b;
+  }
+  

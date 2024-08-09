@@ -1,0 +1,30 @@
+<!-- <div class="comentarios-container">
+    <div class="usuario-nombre">
+        Usuario: {{ usuarioNombre }}
+    </div>
+    <h2>Comentarios</h2>
+    <form [formGroup]="newCommentForm" (ngSubmit)="agregarComentario()" class="new-comment-form">
+        <input formControlName="comentario" placeholder="Añadir comentario" />
+        <button type="submit">Enviar</button>
+    </form>
+    <div *ngFor="let comentario of comentarios" class="comentario">
+        <div *ngIf="!editState[comentario.id]">
+            <p>{{ comentario.comentario }}</p>
+        </div>
+        <div *ngIf="editState[comentario.id]">
+            <input [formControl]="comentarioControl" />
+        </div>
+        <small>Usuario: {{ getUsuarioNombre(comentario.usuario) }}</small>
+        <div *ngIf="comentario.usuario === usuarioCedula" class="comentario-actions">
+            <button mat-icon-button *ngIf="!editState[comentario.id]" (click)="activarEdicion(comentario.id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="editState[comentario.id]" (click)="guardarEdicion(comentario.id)">
+                <mat-icon>save</mat-icon>
+            </button>
+            <button mat-icon-button (click)="eliminarComentario(comentario.id)">
+                <mat-icon color="warn">delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</div> -->

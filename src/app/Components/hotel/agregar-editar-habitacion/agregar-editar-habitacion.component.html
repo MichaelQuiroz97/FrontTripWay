@@ -1,0 +1,22 @@
+<div class="habitacion-form-container">
+    <h2>{{ habitacionId ? 'Editar' : 'Agregar' }} Habitación</h2>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Número de Habitación</mat-label>
+        <input matInput [(ngModel)]="habitacion.roomNumber" name="roomNumber" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Capacidad</mat-label>
+        <input matInput type="number" [(ngModel)]="habitacion.capacity" name="capacity" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput [(ngModel)]="habitacion.description" name="description" required></textarea>
+      </mat-form-field>
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="guardarCambios()">Guardar</button>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

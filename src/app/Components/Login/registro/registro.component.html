@@ -1,0 +1,82 @@
+<div class="container">
+    <mat-card class="card">
+        <p style="font-size: medium; margin: 0; margin-top: 10px;">Solicitamos tus datos personales para que puedas
+            acceder a tu perfil y gestionar tus beneficios</p>
+
+        <mat-divider class="separacion"></mat-divider>
+
+        <div class="espacio">
+            <mat-card-subtitle class="subtitulo">
+                Acerca de ti
+            </mat-card-subtitle>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Cédula</mat-label>
+                <input formControlName="cedula" matInput autocomplete="off">
+                <mat-error>El campo es obligatorio</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre" matInput autocomplete="off">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker"
+                    formControlName="fechaNacimiento">
+                <!--mat-hint>MM/DD/YYYY</mat-hint-->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>País de Residencia</mat-label>
+                <mat-select formControlName="pais" required>
+                    @for (elem of pais; track elem) {
+                    <mat-option [value]="elem.id">{{elem.valor}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-divider class="separacion"></mat-divider>
+
+            <div class="espacio">
+                <mat-card-subtitle class="subtitulo">
+                    Credenciales
+                </mat-card-subtitle>
+            </div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput formControlName="correo" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hidecontra ? 'password' : 'text'" formControlName="contra" required>
+                <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                    <mat-icon>{{hidecontra ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>Debe tener al menos 6 caracteres, incluyendo un número, una letra y un carácter
+                    especial</mat-hint>
+            </mat-form-field>
+
+            <mat-divider class="separacion"></mat-divider>
+
+            <div class="espacio">
+                <mat-card-subtitle class="subtitulo">
+                    Comunicaciones
+                </mat-card-subtitle>
+            </div>
+            <mat-checkbox>Acepto los términos y condiciones</mat-checkbox>
+            <div style="text-align: center;">
+                <button class="botonn" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Crear
+                    cuenta</button>
+            </div>
+        </form>
+    </mat-card>

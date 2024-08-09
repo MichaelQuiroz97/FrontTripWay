@@ -1,0 +1,163 @@
+
+.hotel-container {
+  display: flex;
+  
+  justify-items: center;
+  height: 90%;
+}
+
+.hotel-details {
+  margin-top: 5px;
+  width: 50%;
+}
+
+.hotel-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.hotel-photo{
+  height: 250px;
+  width: 90%;
+}
+
+.hotel-photo img{
+  height: 100%;
+    width: 100%;
+}
+
+.hotel-description{
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+
+.edit-hotel {
+  width: 50%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* .image-fondo {
+  width: 50%;
+  overflow: hidden;
+}
+
+.image-fondo img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+} */
+
+
+.nombreHotel{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+}
+
+.Botones {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/*avion*/
+/* .image-fondo {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.plane-svg {
+  width: 100%;
+  height: auto;
+}
+
+#heart-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-path 5s linear infinite;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+} */
+
+
+
+
+
+
+
+
+
+.image-fondo {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.plane-svg {
+  width: 100%;
+  height: auto;
+}
+
+#heart-path {
+  stroke-width: 2;
+  stroke-dasharray: 4,4; 
+  animation: color-change 15s linear infinite;
+}
+
+@keyframes color-change {
+  0% {
+    stroke: black;
+  }
+  100% {
+    stroke: black;
+  }
+}
+
+#heart-path:nth-child(1) {
+  animation: dash-change 15s linear infinite;
+}
+
+@keyframes dash-change {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+#heart-path:nth-child(1):hover {
+  stroke: red;
+}
+
+#plane-icon {
+  transform-origin: center;
+  animation: plane-move 11s linear infinite; /* 1/4 más rápido */
+}
+
+@keyframes plane-move {
+  0% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+
